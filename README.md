@@ -168,7 +168,7 @@ YAI-Marketing/
 
 ## 版本
 
-| 技能 | 版本 | 基於原版 |
-|------|------|---------|
-| `copywriting-hk` | 1.0.0 | `copywriting` v1.1.0 |
-| `product-marketing-context-hk` | 1.0.0 | `product-marketing-context` v1.1.0 |
+| 技能 | 版本 | 
+|------|------|
+| `copywriting-hk` | 1.0.0 | 
+| `product-marketing-context-hk` | 1.0.0 | 
