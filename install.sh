@@ -7,7 +7,7 @@
 set -e
 
 REPO="https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main"
-SKILLS_DIR="${CLAUDE_SKILLS_DIR:-$HOME/.claude/skills}"
+SKILLS_DIR="${OPENCLAW_SKILLS_DIR:-$HOME/.openclaw/skills}"
 
 # ── 顏色輸出 ────────────────────────────────────────────────
 RED='\033[0;31m'; GOLD='\033[0;33m'; GREEN='\033[0;32m'
@@ -32,7 +32,7 @@ while [[ $# -gt 0 ]]; do
       echo "  --skill <名稱>   只安裝指定技能"
       echo "                   可選: copywriting-hk"
       echo "                         product-marketing-context-hk"
-      echo "  --dir <路徑>     指定安裝目錄 (預設: ~/.claude/skills)"
+      echo "  --dir <路徑>     指定安裝目錄 (預設: ~/.openclaw/skills)"
       echo "  --help           顯示此說明"
       echo ""
       echo "範例:"

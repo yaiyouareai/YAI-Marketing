@@ -467,6 +467,7 @@
     <span class="badge">copywriting-hk</span>
     <span class="badge">廣東話書面語</span>
     <span class="badge">中英夾雜</span>
+    <span class="badge">OpenClaw</span>
   </div>
 </div>
 
@@ -522,45 +523,106 @@
     <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">將技能套件上傳至 GitHub 後，用戶可以直接用以下指令安裝，無需手動下載任何檔案。</p>
 
     <div class="install-box">
-      <div class="install-tabs" style="pointer-events:none;opacity:0.5;font-size:12px;padding:8px 16px;background:var(--paper-dark);border-bottom:1px solid var(--border);">
-        <span style="font-family:'JetBrains Mono',monospace;">Terminal</span>
+      <div class="install-tabs" style="pointer-events:none;">
+        <button class="install-tab active" style="pointer-events:none;">🦞 OpenClaw</button>
       </div>
-      <div style="padding:28px;">
 
-        <p style="font-size:13px;font-weight:700;margin-bottom:10px;">安裝全部技能（推薦）</p>
-        <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</span></pre>
+      <div class="install-pane active" id="pane-openclaw" style="display:block;">
+        <div class="note">
+          <strong>前置要求：</strong>已安裝 OpenClaw。技能會安裝至 <code>~/.openclaw/skills/</code> 目錄。
+        </div>
 
-        <p style="font-size:13px;font-weight:700;margin:20px 0 10px;">只安裝文案技能</p>
-        <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill copywriting-hk</span></pre>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>一行指令安裝（推薦）</h4>
+              <p>打開終端機（macOS：Terminal / iTerm；Windows：PowerShell 或 WSL），貼上以下指令：</p>
+              <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</span></pre>
+              <p style="margin-top:10px;">腳本會自動下載所有檔案並安裝至 OpenClaw 的技能目錄。</p>
+              <div class="ui-mock" style="margin-top:12px;">
+                <div class="ui-mock-bar">
+                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                  <div class="ui-mock-title">Terminal</div>
+                </div>
+                <div class="ui-mock-body">
+                  <div class="ui-line-muted">$ curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</div>
+                  <div class="ui-line-white" style="margin-top:6px;">香港市場行銷技能套件 安裝程式</div>
+                  <div class="ui-line-muted">─────────────────────────────────────</div>
+                  <div class="ui-line-white">▸ 建立技能目錄</div>
+                  <div class="ui-line-green">✓ 目錄: ~/.openclaw/skills</div>
+                  <div class="ui-line-white">▸ 安裝 product-marketing-context-hk</div>
+                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
+                  <div class="ui-line-green">✓ product-marketing-context-hk 安裝完成</div>
+                  <div class="ui-line-white">▸ 安裝 copywriting-hk</div>
+                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
+                  <div class="ui-line-green">✓ 下載 copy-frameworks-hk.md</div>
+                  <div class="ui-line-green">✓ 下載 natural-transitions-hk.md</div>
+                  <div class="ui-line-green">✓ copywriting-hk 安裝完成</div>
+                  <div class="ui-line-muted" style="margin-top:6px;">─────────────────────────────────────</div>
+                  <div class="ui-line-green" style="font-weight:bold;">✓ 安裝完成！</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <p style="font-size:13px;font-weight:700;margin:20px 0 10px;">只安裝背景資料技能</p>
-        <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill product-marketing-context-hk</span></pre>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>在 OpenClaw 確認安裝成功</h4>
+              <p>打開 OpenClaw，前往左側欄 <code>Skills</code>，確認兩個技能已列出並啟用：</p>
+              <div class="ui-mock" style="margin-top:12px;">
+                <div class="ui-mock-bar">
+                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                  <div class="ui-mock-title">OpenClaw — Skills</div>
+                </div>
+                <div class="ui-mock-body">
+                  <div class="ui-line-muted">Installed Skills</div>
+                  <div class="ui-line-green" style="margin-top:6px;">✓ product-marketing-context-hk  v1.0.0</div>
+                  <div class="ui-line-green">✓ copywriting-hk  v1.0.0</div>
+                </div>
+              </div>
+              <div class="note" style="margin-top:12px;">
+                如技能未顯示，嘗試重啟 OpenClaw 或手動刷新 Skills 頁面。
+              </div>
+            </div>
+          </div>
 
-        <p style="font-size:13px;font-weight:700;margin:20px 0 10px;">指定安裝目錄</p>
-        <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --dir /path/to/your/skills</span></pre>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>開啟新對話，開始使用</h4>
+              <p>在 OpenClaw 開啟新對話，直接輸入觸發語句：</p>
+              <div class="ui-mock" style="margin-top:12px;">
+                <div class="ui-mock-bar">
+                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                  <div class="ui-mock-title">OpenClaw — New Chat</div>
+                </div>
+                <div class="ui-mock-body">
+                  <div class="ui-prompt">你 →</div>
+                  <div class="ui-line-white" style="margin-left:24px;">幫我設定產品行銷背景資料</div>
+                  <div style="margin-top:8px;" class="ui-line-muted">── Claude ─────────────────────────────</div>
+                  <div class="ui-line-green" style="margin-top:4px;">Using skill: product-marketing-context-hk</div>
+                  <div class="ui-line-white" style="margin-top:4px;">好的，我先檢查一下是否已有背景資料……</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <p style="font-size:13px;font-weight:700;margin:20px 0 10px;">或用 Git Clone</p>
+        <p style="font-size:13px;font-weight:700;margin:28px 0 12px;">其他安裝選項</p>
+
+        <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">只安裝單一技能</p>
+        <pre><span class="comment"># 只安裝文案技能</span>
+<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill copywriting-hk</span>
+
+<span class="comment"># 只安裝背景資料技能</span>
+<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill product-marketing-context-hk</span></pre>
+
+        <p style="font-size:12px;color:var(--muted);margin:16px 0 8px;">用 Git Clone</p>
         <pre><span class="cmd">git clone https://github.com/yaiyouareai/YAI-Marketing.git
-cd marketing-skills-hk
+cd YAI-Marketing
 bash install.sh</span></pre>
-
-        <div class="note" style="margin-top:20px;">
-          <strong>預設安裝位置：</strong><code>~/.claude/skills/</code>。如需更改，用 <code>--dir</code> 參數指定。
-        </div>
-
-        <p style="font-size:13px;font-weight:700;margin:24px 0 10px;">安裝後的目錄結構</p>
-        <div class="file-tree">
-<span class="tree-dir">~/.claude/skills/</span>
-├── <span class="tree-dir">copywriting-hk/</span>
-│   ├── <span class="tree-file">SKILL.md</span>
-│   ├── <span class="tree-file">evals.json</span>
-│   └── <span class="tree-dir">references/</span>
-│       ├── <span class="tree-file">copy-frameworks-hk.md</span>
-│       └── <span class="tree-file">natural-transitions-hk.md</span>
-└── <span class="tree-dir">product-marketing-context-hk/</span>
-    ├── <span class="tree-file">SKILL.md</span>
-    └── <span class="tree-file">evals.json</span>
-        </div>
 
       </div>
     </div>
@@ -568,42 +630,114 @@ bash install.sh</span></pre>
 
   <!-- INSTALL -->
   <div class="section">
-    <div class="section-label">安裝指南</div>
-    <div class="section-title">選擇你的平台</div>
-    <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">根據你使用的工具，按照對應的步驟安裝技能套件。</p>
+    <div class="section-label">逐步安裝</div>
+    <div class="section-title">三步完成安裝</div>
+    <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">以下步驟適用於已安裝 OpenClaw 的用戶。</p>
 
     <div class="install-box">
-      <div class="install-tabs">
-        <button class="install-tab active" onclick="switchTab('openclaw')">🦞 OpenClaw</button>
-        <button class="install-tab" onclick="switchTab('claude')">◆ Claude.ai</button>
+      <div class="install-tabs" style="pointer-events:none;">
+        <button class="install-tab active" style="pointer-events:none;">🦞 OpenClaw</button>
       </div>
 
-      <!-- OPENCLAW -->
-      <div class="install-pane active" id="pane-openclaw">
+      <div class="install-pane active" id="pane-openclaw" style="display:block;">
         <div class="note">
-          <strong>OpenClaw</strong> 係一個開源的 Claude 技能管理平台，支援直接安裝 <code>.skill</code> 檔案或從資料夾匯入技能。
+          <strong>前置要求：</strong>已安裝 OpenClaw。技能會安裝至 <code>~/.openclaw/skills/</code> 目錄。
         </div>
 
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h4>下載技能檔案</h4>
-              <p>下載以下所有檔案，保持資料夾結構不變：</p>
-              <div class="file-tree" style="margin-top:12px;">
-<span class="tree-dir">marketing-skills-hk/</span>
-├── <span class="tree-dir">copywriting-hk/</span>
-│   ├── <span class="tree-file">SKILL.md</span>
-│   ├── <span class="tree-file">evals.json</span>
-│   └── <span class="tree-dir">references/</span>
-│       ├── <span class="tree-file">copy-frameworks-hk.md</span>
-│       └── <span class="tree-file">natural-transitions-hk.md</span>
-└── <span class="tree-dir">product-marketing-context-hk/</span>
-    ├── <span class="tree-file">SKILL.md</span>
-    └── <span class="tree-file">evals.json</span>
+              <h4>一行指令安裝（推薦）</h4>
+              <p>打開終端機（macOS：Terminal / iTerm；Windows：PowerShell 或 WSL），貼上以下指令：</p>
+              <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</span></pre>
+              <p style="margin-top:10px;">腳本會自動下載所有檔案並安裝至 OpenClaw 的技能目錄。</p>
+              <div class="ui-mock" style="margin-top:12px;">
+                <div class="ui-mock-bar">
+                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                  <div class="ui-mock-title">Terminal</div>
+                </div>
+                <div class="ui-mock-body">
+                  <div class="ui-line-muted">$ curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</div>
+                  <div class="ui-line-white" style="margin-top:6px;">香港市場行銷技能套件 安裝程式</div>
+                  <div class="ui-line-muted">─────────────────────────────────────</div>
+                  <div class="ui-line-white">▸ 建立技能目錄</div>
+                  <div class="ui-line-green">✓ 目錄: ~/.openclaw/skills</div>
+                  <div class="ui-line-white">▸ 安裝 product-marketing-context-hk</div>
+                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
+                  <div class="ui-line-green">✓ product-marketing-context-hk 安裝完成</div>
+                  <div class="ui-line-white">▸ 安裝 copywriting-hk</div>
+                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
+                  <div class="ui-line-green">✓ 下載 copy-frameworks-hk.md</div>
+                  <div class="ui-line-green">✓ 下載 natural-transitions-hk.md</div>
+                  <div class="ui-line-green">✓ copywriting-hk 安裝完成</div>
+                  <div class="ui-line-muted" style="margin-top:6px;">─────────────────────────────────────</div>
+                  <div class="ui-line-green" style="font-weight:bold;">✓ 安裝完成！</div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>在 OpenClaw 確認安裝成功</h4>
+              <p>打開 OpenClaw，前往左側欄 <code>Skills</code>，確認兩個技能已列出並啟用：</p>
+              <div class="ui-mock" style="margin-top:12px;">
+                <div class="ui-mock-bar">
+                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                  <div class="ui-mock-title">OpenClaw — Skills</div>
+                </div>
+                <div class="ui-mock-body">
+                  <div class="ui-line-muted">Installed Skills</div>
+                  <div class="ui-line-green" style="margin-top:6px;">✓ product-marketing-context-hk  v1.0.0</div>
+                  <div class="ui-line-green">✓ copywriting-hk  v1.0.0</div>
+                </div>
+              </div>
+              <div class="note" style="margin-top:12px;">
+                如技能未顯示，嘗試重啟 OpenClaw 或手動刷新 Skills 頁面。
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>開啟新對話，開始使用</h4>
+              <p>在 OpenClaw 開啟新對話，直接輸入觸發語句：</p>
+              <div class="ui-mock" style="margin-top:12px;">
+                <div class="ui-mock-bar">
+                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                  <div class="ui-mock-title">OpenClaw — New Chat</div>
+                </div>
+                <div class="ui-mock-body">
+                  <div class="ui-prompt">你 →</div>
+                  <div class="ui-line-white" style="margin-left:24px;">幫我設定產品行銷背景資料</div>
+                  <div style="margin-top:8px;" class="ui-line-muted">── Claude ─────────────────────────────</div>
+                  <div class="ui-line-green" style="margin-top:4px;">Using skill: product-marketing-context-hk</div>
+                  <div class="ui-line-white" style="margin-top:4px;">好的，我先檢查一下是否已有背景資料……</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:13px;font-weight:700;margin:28px 0 12px;">其他安裝選項</p>
+
+        <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">只安裝單一技能</p>
+        <pre><span class="comment"># 只安裝文案技能</span>
+<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill copywriting-hk</span>
+
+<span class="comment"># 只安裝背景資料技能</span>
+<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill product-marketing-context-hk</span></pre>
+
+        <p style="font-size:12px;color:var(--muted);margin:16px 0 8px;">用 Git Clone</p>
+        <pre><span class="cmd">git clone https://github.com/yaiyouareai/YAI-Marketing.git
+cd YAI-Marketing
+bash install.sh</span></pre>
+
+      </div>
+    </div>
 
           <div class="step">
             <div class="step-num">2</div>
@@ -849,13 +983,6 @@ bash install.sh</span></pre>
   香港市場行銷技能套件 · 基於 <span>copywriting v1.1.0</span> 及 <span>product-marketing-context v1.1.0</span> 本地化
 </footer>
 
-<script>
-function switchTab(id) {
-  document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
-  document.querySelector('#pane-' + id).classList.add('active');
-  event.target.classList.add('active');
-}
-</script>
+<script></script>
 </body>
 </html>
