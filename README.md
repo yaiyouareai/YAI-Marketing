@@ -140,7 +140,6 @@ bash install.sh
 
 **curl 指令失敗**
 - 確認網絡連線正常
-- 確認 repo 為公開（Public）狀態
 - 嘗試方法三（Git Clone）
 
 **需要更新技能**
