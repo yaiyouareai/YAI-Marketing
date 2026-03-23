@@ -3,471 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>香港市場行銷技能套件</title>
+<title>YAI 香港市場行銷技能套件</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #E8341C;
-    --red-dim: #b3280f;
-    --gold: #C9A84C;
-    --gold-light: #e8c96a;
-    --ink: #0f0e0d;
-    --paper: #F5F0E8;
-    --paper-dark: #EAE3D2;
-    --muted: #7A7060;
-    --code-bg: #1a1915;
-    --code-text: #e8c96a;
-    --border: rgba(201,168,76,0.25);
-    --shadow: 0 4px 32px rgba(15,14,13,0.12);
+    --red: #E8341C; --gold: #C9A84C; --gold-light: #e8c96a;
+    --ink: #0f0e0d; --paper: #F5F0E8; --paper-dark: #EAE3D2;
+    --muted: #7A7060; --code-bg: #1a1915; --code-text: #e8c96a;
+    --border: rgba(201,168,76,0.25); --shadow: 0 4px 32px rgba(15,14,13,0.12);
+    --green: #2d8a4e;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans HK', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 15px; }
 
-  body {
-    font-family: 'Noto Sans HK', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.7;
-    font-size: 15px;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 80px 40px 64px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(201,168,76,0.04) 40px,
-      rgba(201,168,76,0.04) 41px
-    );
-  }
-  .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    position: relative;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 6vw, 64px);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    position: relative;
-  }
+  /* HERO */
+  .hero { background: var(--ink); color: var(--paper); padding: 72px 40px 60px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,168,76,0.04) 40px, rgba(201,168,76,0.04) 41px); }
+  .hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; position: relative; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; position: relative; }
   .hero h1 span { color: var(--gold); }
-  .hero-sub {
-    font-size: 16px;
-    color: rgba(245,240,232,0.65);
-    max-width: 540px;
-    margin: 0 auto 40px;
-    position: relative;
-  }
-  .badge-row {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-  }
-  .badge {
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold-light);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 6px 14px;
-    border-radius: 4px;
-    letter-spacing: 0.05em;
-  }
+  .hero-sub { font-size: 15px; color: rgba(245,240,232,0.6); max-width: 520px; margin: 0 auto 36px; position: relative; }
+  .badge-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .badge { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: var(--gold-light); font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 5px 12px; border-radius: 4px; letter-spacing: 0.05em; }
 
-  /* ── LAYOUT ── */
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ── SECTION ── */
-  .section {
-    padding: 64px 0;
-    border-bottom: 1px solid var(--border);
-  }
+  /* LAYOUT */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 56px 0; border-bottom: 1px solid var(--border); }
   .section:last-child { border-bottom: none; }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
 
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-  }
+  /* SKILL GRID */
+  .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+  @media(max-width:700px){ .skill-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:480px){ .skill-grid { grid-template-columns: 1fr; } }
+  .skill-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 20px; position: relative; box-shadow: var(--shadow); }
+  .skill-card.first { border-top: 3px solid var(--gold); }
+  .skill-card.red { border-top: 3px solid var(--red); }
+  .skill-card.green { border-top: 3px solid var(--green); }
+  .skill-order { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 900; color: var(--gold); opacity: 0.25; line-height: 1; margin-bottom: 6px; }
+  .skill-name { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--ink); background: var(--paper-dark); padding: 3px 8px; border-radius: 3px; display: inline-block; margin-bottom: 10px; }
+  .skill-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .skill-card p { font-size: 12px; color: var(--muted); line-height: 1.55; }
+  .first-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; background: var(--gold); color: white; padding: 2px 7px; border-radius: 3px; position: absolute; top: 14px; right: 14px; }
 
-  /* ── SKILL CARDS ── */
-  .skill-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-  @media (max-width: 600px) { .skill-grid { grid-template-columns: 1fr; } }
-
-  .skill-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 28px;
-    position: relative;
-    box-shadow: var(--shadow);
-  }
-  .skill-card.primary { border-top: 3px solid var(--gold); }
-  .skill-card.secondary { border-top: 3px solid var(--red); }
-
-  .skill-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .skill-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ink);
-    background: var(--paper-dark);
-    padding: 4px 10px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-  .skill-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .skill-card p {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .first-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    background: var(--gold);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 3px;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-
-  /* ── FLOW ── */
-  .flow {
-    display: flex;
-    gap: 0;
-    align-items: stretch;
-    margin: 32px 0;
-  }
-  @media (max-width: 600px) { .flow { flex-direction: column; } }
-  .flow-step {
-    flex: 1;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px 20px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    position: relative;
-  }
-  .flow-step + .flow-step { margin-left: -1px; border-radius: 0 8px 8px 0; }
+  /* FLOW */
+  .flow { display: flex; align-items: stretch; margin: 24px 0; gap: 0; }
+  @media(max-width:600px){ .flow { flex-direction: column; } }
+  .flow-step { flex: 1; background: white; border: 1px solid var(--border); padding: 20px 16px; text-align: center; box-shadow: var(--shadow); }
   .flow-step:first-child { border-radius: 8px 0 0 8px; }
   .flow-step:last-child { border-radius: 0 8px 8px 0; }
-  .flow-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--gold);
-    opacity: 0.4;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .flow-step h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-  .flow-step p { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .flow-arrow {
-    align-self: center;
-    color: var(--gold);
-    font-size: 18px;
-    margin: 0 -4px;
-    z-index: 1;
-    flex-shrink: 0;
-  }
-  @media (max-width: 600px) { .flow-arrow { transform: rotate(90deg); margin: -4px auto; } }
+  .flow-step + .flow-step { margin-left: -1px; }
+  .flow-num { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 900; color: var(--gold); opacity: 0.35; line-height: 1; margin-bottom: 6px; }
+  .flow-step h4 { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .flow-step p { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .flow-arrow { align-self: center; color: var(--gold); font-size: 16px; margin: 0 -4px; z-index: 1; flex-shrink: 0; }
+  @media(max-width:600px){ .flow-arrow { transform: rotate(90deg); margin: -4px auto; } }
 
-  /* ── INSTALL TABS ── */
-  .install-box {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 32px;
-  }
-  .install-tabs {
-    display: flex;
-    background: var(--paper-dark);
-    border-bottom: 1px solid var(--border);
-  }
-  .install-tab {
-    padding: 14px 24px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    background: none;
-    color: var(--muted);
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-    font-family: 'Noto Sans HK', sans-serif;
-  }
-  .install-tab.active {
-    color: var(--ink);
-    border-bottom-color: var(--gold);
-    background: white;
-  }
+  /* INSTALL TABS */
+  .install-box { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin-bottom: 28px; }
+  .install-tabs { display: flex; background: var(--paper-dark); border-bottom: 1px solid var(--border); }
+  .install-tab { padding: 12px 22px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--muted); border-bottom: 2px solid transparent; transition: all 0.2s; font-family: 'Noto Sans HK', sans-serif; }
+  .install-tab.active { color: var(--ink); border-bottom-color: var(--gold); background: white; }
   .install-tab:hover:not(.active) { color: var(--ink); }
-
-  .install-pane { display: none; padding: 32px; }
+  .install-pane { display: none; padding: 28px; }
   .install-pane.active { display: block; }
 
-  /* ── STEPS ── */
+  /* STEPS */
   .steps { counter-reset: step; }
-  .step {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 28px;
-    align-items: flex-start;
-  }
-  .step-num {
-    counter-increment: step;
-    min-width: 32px;
-    height: 32px;
-    background: var(--ink);
-    color: var(--gold);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .step-body h4 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .step-body p, .step-body li {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  .step-body ul { padding-left: 18px; margin-top: 6px; }
-  .step-body li { margin-bottom: 4px; }
+  .step { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+  .step-num { counter-increment: step; min-width: 28px; height: 28px; background: var(--ink); color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-body h4 { font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+  .step-body p, .step-body li { font-size: 13px; color: var(--muted); line-height: 1.65; }
+  .step-body ul { padding-left: 16px; margin-top: 6px; }
+  .step-body li { margin-bottom: 3px; }
 
-  /* ── CODE ── */
-  code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    background: var(--paper-dark);
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: var(--red);
-  }
-  pre {
-    background: var(--code-bg);
-    color: var(--code-text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    line-height: 1.6;
-    padding: 20px 24px;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 12px 0;
-  }
-  pre .comment { color: rgba(201,168,76,0.45); }
-  pre .path { color: #7ec8a0; }
-  pre .cmd { color: var(--code-text); }
+  /* CODE */
+  code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: var(--paper-dark); padding: 2px 5px; border-radius: 3px; color: var(--red); }
+  pre { background: var(--code-bg); color: var(--code-text); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; line-height: 1.7; padding: 18px 22px; border-radius: 6px; overflow-x: auto; margin: 10px 0; }
+  pre .comment { color: rgba(201,168,76,0.4); }
+  pre .green { color: #7ec8a0; }
 
-  /* ── SCREENSHOT MOCK ── */
-  .ui-mock {
-    background: var(--code-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 16px 0;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-  }
-  .ui-mock-bar {
-    background: #2a2825;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .dot { width: 10px; height: 10px; border-radius: 50%; }
-  .dot.r { background: #ff5f57; }
-  .dot.y { background: #febc2e; }
-  .dot.g { background: #28c840; }
-  .ui-mock-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: rgba(255,255,255,0.3);
-    margin-left: 8px;
-  }
-  .ui-mock-body {
-    padding: 20px 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    line-height: 1.8;
-  }
-  .ui-line-muted { color: rgba(201,168,76,0.4); }
-  .ui-line-gold { color: var(--gold); }
-  .ui-line-green { color: #7ec8a0; }
-  .ui-line-white { color: rgba(245,240,232,0.85); }
-  .ui-line-red { color: #ff8a75; }
-  .ui-prompt { color: var(--gold); font-weight: 600; }
+  /* UI MOCK */
+  .ui-mock { background: var(--code-bg); border-radius: 7px; overflow: hidden; margin: 14px 0; box-shadow: 0 6px 32px rgba(0,0,0,0.22); }
+  .ui-mock-bar { background: #2a2825; padding: 9px 14px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
+  .ui-mock-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); margin-left: 6px; }
+  .ui-mock-body { padding: 16px 20px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; line-height: 1.9; }
+  .ui-muted { color: rgba(201,168,76,0.4); } .ui-gold { color: var(--gold); } .ui-green { color: #7ec8a0; } .ui-white { color: rgba(245,240,232,0.85); }
 
-  /* ── NOTE BOX ── */
-  .note {
-    background: rgba(201,168,76,0.08);
-    border-left: 3px solid var(--gold);
-    border-radius: 0 6px 6px 0;
-    padding: 14px 18px;
-    font-size: 13px;
-    color: var(--muted);
-    margin: 16px 0;
-  }
+  /* NOTE */
+  .note { background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 13px; color: var(--muted); margin: 14px 0; }
   .note strong { color: var(--ink); }
+  .note.warn { background: rgba(232,52,28,0.06); border-left-color: var(--red); }
 
-  /* ── FILE TREE ── */
-  .file-tree {
-    background: var(--code-bg);
-    color: var(--code-text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    padding: 24px;
-    border-radius: 8px;
-    line-height: 2;
-  }
-  .tree-dir { color: #7ec8a0; }
-  .tree-file { color: rgba(245,240,232,0.7); }
-  .tree-comment { color: rgba(201,168,76,0.4); }
+  /* FILE TREE */
+  .file-tree { background: var(--code-bg); color: var(--code-text); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; padding: 20px; border-radius: 7px; line-height: 2; }
+  .tree-dir { color: #7ec8a0; } .tree-file { color: rgba(245,240,232,0.65); } .tree-c { color: rgba(201,168,76,0.4); }
 
-  /* ── DETAIL SECTIONS ── */
-  .detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 20px;
-  }
-  @media (max-width: 600px) { .detail-grid { grid-template-columns: 1fr; } }
+  /* SKILL LIST */
+  .skill-list { list-style: none; padding: 0; margin: 14px 0; }
+  .skill-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .skill-list li:last-child { border-bottom: none; }
+  .skill-list .sname { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: var(--paper-dark); padding: 3px 8px; border-radius: 3px; color: var(--red); white-space: nowrap; flex-shrink: 0; }
+  .skill-list .sdesc { font-size: 13px; color: var(--muted); }
 
-  .detail-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px;
-  }
-  .detail-card h4 {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .detail-card h4 .icon { font-size: 16px; }
-  .detail-card ul { padding-left: 16px; }
-  .detail-card li {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 4px;
-    line-height: 1.5;
-  }
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 9px 10px; border-bottom: 2px solid var(--border); }
+  td { padding: 10px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  td .sub { color: var(--muted); font-size: 11px; margin-top: 2px; }
 
-  /* ── TABLE ── */
-  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-  th {
-    text-align: left;
-    font-size: 11px;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 10px 12px;
-    border-bottom: 2px solid var(--border);
-  }
-  td {
-    padding: 12px 12px;
-    font-size: 13px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
-  td .desc { color: var(--muted); font-size: 12px; margin-top: 2px; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    color: rgba(245,240,232,0.4);
-    text-align: center;
-    padding: 32px;
-    font-size: 12px;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.05em;
-  }
+  footer { background: var(--ink); color: rgba(245,240,232,0.35); text-align: center; padding: 28px; font-size: 11px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; }
   footer span { color: var(--gold); }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">香港市場行銷技能套件 · v1.0.0</div>
-  <h1>為<span>香港</span>市場而設<br>的 Claude 技能</h1>
-  <p class="hero-sub">兩個配合使用的 AI 技能，幫你撰寫符合本地語境、真正有效轉化的推廣文案。</p>
+  <div class="hero-eyebrow">YAI · 香港市場行銷技能套件 · v1.0</div>
+  <h1>六個技能，覆蓋<span>香港市場</span><br>完整行銷流程</h1>
+  <p class="hero-sub">從產品定位到文案撰寫、內容策略、社交媒體，全部符合香港語境，配合 OpenClaw 和 Claude.ai 使用。</p>
   <div class="badge-row">
     <span class="badge">product-marketing-context-hk</span>
     <span class="badge">copywriting-hk</span>
-    <span class="badge">廣東話書面語</span>
-    <span class="badge">中英夾雜</span>
-    <span class="badge">OpenClaw</span>
+    <span class="badge">editing-content-hk</span>
+    <span class="badge">social-content-hk</span>
+    <span class="badge">strategy-content-hk</span>
+    <span class="badge">strategy-launch-hk</span>
   </div>
 </div>
 
@@ -475,22 +141,46 @@
 
   <!-- OVERVIEW -->
   <div class="section">
-    <div class="section-label">概覽</div>
-    <div class="section-title">兩個技能，一套完整流程</div>
+    <div class="section-label">技能概覽</div>
+    <div class="section-title">六個技能，一套完整流程</div>
 
     <div class="skill-grid">
-      <div class="skill-card primary">
-        <span class="first-tag">先用</span>
-        <div class="skill-num">技能 01</div>
+      <div class="skill-card first">
+        <span class="first-badge">先安裝</span>
+        <div class="skill-order">①</div>
         <div class="skill-name">product-marketing-context-hk</div>
         <h3>產品行銷背景資料</h3>
-        <p>建立一份產品定位文件，記錄受眾、競爭格局、客戶語言等核心資訊。其他技能自動讀取，唔需要重複輸入。</p>
+        <p>建立一份產品定位文件，記錄受眾、競爭格局、客戶語言。其他五個技能自動讀取，唔需要重複輸入。</p>
       </div>
-      <div class="skill-card secondary">
-        <div class="skill-num">技能 02</div>
+      <div class="skill-card red">
+        <div class="skill-order">②</div>
+        <div class="skill-name">strategy-content-hk</div>
+        <h3>內容策略</h3>
+        <p>規劃話題群組、關鍵詞研究、內容日曆，包括香港本地渠道（連登、Facebook 群組）分析。</p>
+      </div>
+      <div class="skill-card red">
+        <div class="skill-order">③</div>
+        <div class="skill-name">strategy-launch-hk</div>
+        <h3>產品發布策略</h3>
+        <p>規劃發布 ORB 框架、香港媒體策略、KOL 合作，以及本地社群（Cyberport、科學園）渠道。</p>
+      </div>
+      <div class="skill-card green">
+        <div class="skill-order">④</div>
         <div class="skill-name">copywriting-hk</div>
-        <h3>香港市場文案撰寫</h3>
-        <p>為主頁、登陸頁、定價頁等撰寫符合香港語境的推廣文案。自動讀取背景資料，直接輸出可用文案。</p>
+        <h3>文案撰寫</h3>
+        <p>撰寫主頁、登陸頁、定價頁等各類推廣文案，符合香港語境，支援廣東話書面語和中英夾雜。</p>
+      </div>
+      <div class="skill-card green">
+        <div class="skill-order">⑤</div>
+        <div class="skill-name">editing-content-hk</div>
+        <h3>文案編輯</h3>
+        <p>用七步編輯框架改善現有文案，專門識別翻譯腔、企業官腔和香港特有的語言問題。</p>
+      </div>
+      <div class="skill-card green">
+        <div class="skill-order">⑥</div>
+        <div class="skill-name">social-content-hk</div>
+        <h3>社交媒體內容</h3>
+        <p>規劃 LinkedIn、Instagram、小紅書、Facebook、WhatsApp 廣播的內容計劃，含香港 Hook 公式庫。</p>
       </div>
     </div>
 
@@ -498,181 +188,66 @@
       <div class="flow-step">
         <div class="flow-num">1</div>
         <h4>建立背景資料</h4>
-        <p>用 product-marketing-context-hk 輸入你的產品資訊</p>
+        <p>product-marketing-context-hk<br>記錄產品定位和受眾</p>
       </div>
       <div class="flow-arrow">›</div>
       <div class="flow-step">
         <div class="flow-num">2</div>
-        <h4>撰寫文案</h4>
-        <p>用 copywriting-hk 直接寫文案，技能自動引用背景資料</p>
+        <h4>制定策略</h4>
+        <p>strategy-content / launch-hk<br>規劃內容和發布計劃</p>
       </div>
       <div class="flow-arrow">›</div>
       <div class="flow-step">
         <div class="flow-num">3</div>
-        <h4>持續更新</h4>
-        <p>推出新功能或新方案時，更新背景資料即可</p>
+        <h4>創作內容</h4>
+        <p>copywriting / social-hk<br>撰寫文案和社交帖</p>
       </div>
-    </div>
-  </div>
-
-
-  <!-- QUICK INSTALL -->
-  <div class="section">
-    <div class="section-label">快速安裝</div>
-    <div class="section-title">一行指令，即刻完成</div>
-    <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">將技能套件上傳至 GitHub 後，用戶可以直接用以下指令安裝，無需手動下載任何檔案。</p>
-
-    <div class="install-box">
-      <div class="install-tabs" style="pointer-events:none;">
-        <button class="install-tab active" style="pointer-events:none;">🦞 OpenClaw</button>
-      </div>
-
-      <div class="install-pane active" id="pane-openclaw" style="display:block;">
-        <div class="note">
-          <strong>前置要求：</strong>已安裝 OpenClaw。技能會安裝至 <code>~/.openclaw/skills/</code> 目錄。
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-body">
-              <h4>一行指令安裝（推薦）</h4>
-              <p>打開終端機（macOS：Terminal / iTerm；Windows：PowerShell 或 WSL），貼上以下指令：</p>
-              <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</span></pre>
-              <p style="margin-top:10px;">腳本會自動下載所有檔案並安裝至 OpenClaw 的技能目錄。</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">Terminal</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-line-muted">$ curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</div>
-                  <div class="ui-line-white" style="margin-top:6px;">香港市場行銷技能套件 安裝程式</div>
-                  <div class="ui-line-muted">─────────────────────────────────────</div>
-                  <div class="ui-line-white">▸ 建立技能目錄</div>
-                  <div class="ui-line-green">✓ 目錄: ~/.openclaw/skills</div>
-                  <div class="ui-line-white">▸ 安裝 product-marketing-context-hk</div>
-                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
-                  <div class="ui-line-green">✓ product-marketing-context-hk 安裝完成</div>
-                  <div class="ui-line-white">▸ 安裝 copywriting-hk</div>
-                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
-                  <div class="ui-line-green">✓ 下載 copy-frameworks-hk.md</div>
-                  <div class="ui-line-green">✓ 下載 natural-transitions-hk.md</div>
-                  <div class="ui-line-green">✓ copywriting-hk 安裝完成</div>
-                  <div class="ui-line-muted" style="margin-top:6px;">─────────────────────────────────────</div>
-                  <div class="ui-line-green" style="font-weight:bold;">✓ 安裝完成！</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-body">
-              <h4>在 OpenClaw 確認安裝成功</h4>
-              <p>打開 OpenClaw，前往左側欄 <code>Skills</code>，確認兩個技能已列出並啟用：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — Skills</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-line-muted">Installed Skills</div>
-                  <div class="ui-line-green" style="margin-top:6px;">✓ product-marketing-context-hk  v1.0.0</div>
-                  <div class="ui-line-green">✓ copywriting-hk  v1.0.0</div>
-                </div>
-              </div>
-              <div class="note" style="margin-top:12px;">
-                如技能未顯示，嘗試重啟 OpenClaw 或手動刷新 Skills 頁面。
-              </div>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-body">
-              <h4>開啟新對話，開始使用</h4>
-              <p>在 OpenClaw 開啟新對話，直接輸入觸發語句：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — New Chat</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-prompt">你 →</div>
-                  <div class="ui-line-white" style="margin-left:24px;">幫我設定產品行銷背景資料</div>
-                  <div style="margin-top:8px;" class="ui-line-muted">── Claude ─────────────────────────────</div>
-                  <div class="ui-line-green" style="margin-top:4px;">Using skill: product-marketing-context-hk</div>
-                  <div class="ui-line-white" style="margin-top:4px;">好的，我先檢查一下是否已有背景資料……</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p style="font-size:13px;font-weight:700;margin:28px 0 12px;">其他安裝選項</p>
-
-        <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">只安裝單一技能</p>
-        <pre><span class="comment"># 只安裝文案技能</span>
-<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill copywriting-hk</span>
-
-<span class="comment"># 只安裝背景資料技能</span>
-<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill product-marketing-context-hk</span></pre>
-
-        <p style="font-size:12px;color:var(--muted);margin:16px 0 8px;">用 Git Clone</p>
-        <pre><span class="cmd">git clone https://github.com/yaiyouareai/YAI-Marketing.git
-cd YAI-Marketing
-bash install.sh</span></pre>
-
+      <div class="flow-arrow">›</div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h4>優化打磨</h4>
+        <p>editing-content-hk<br>編輯和改善現有文案</p>
       </div>
     </div>
   </div>
 
   <!-- INSTALL -->
   <div class="section">
-    <div class="section-label">逐步安裝</div>
-    <div class="section-title">三步完成安裝</div>
-    <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">以下步驟適用於已安裝 OpenClaw 的用戶。</p>
+    <div class="section-label">快速安裝</div>
+    <div class="section-title">選擇你的平台</div>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">根據你使用的工具，按照對應的步驟安裝。</p>
 
     <div class="install-box">
-      <div class="install-tabs" style="pointer-events:none;">
-        <button class="install-tab active" style="pointer-events:none;">🦞 OpenClaw</button>
+      <div class="install-tabs">
+        <button class="install-tab active" onclick="switchTab('openclaw',this)">🦞 OpenClaw</button>
+        <button class="install-tab" onclick="switchTab('claude',this)">◆ Claude.ai</button>
       </div>
 
-      <div class="install-pane active" id="pane-openclaw" style="display:block;">
-        <div class="note">
-          <strong>前置要求：</strong>已安裝 OpenClaw。技能會安裝至 <code>~/.openclaw/skills/</code> 目錄。
-        </div>
+      <!-- OPENCLAW TAB -->
+      <div class="install-pane active" id="pane-openclaw">
+        <div class="note"><strong>前置要求：</strong>已安裝 OpenClaw。技能會安裝至 <code>~/.openclaw/skills/</code>。</div>
 
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h4>一行指令安裝（推薦）</h4>
-              <p>打開終端機（macOS：Terminal / iTerm；Windows：PowerShell 或 WSL），貼上以下指令：</p>
-              <pre><span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</span></pre>
-              <p style="margin-top:10px;">腳本會自動下載所有檔案並安裝至 OpenClaw 的技能目錄。</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">Terminal</div>
-                </div>
+              <h4>一行指令安裝全部（推薦）</h4>
+              <p>打開終端機，貼上以下指令：</p>
+              <pre><span class="ui-gold">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</span></pre>
+              <div class="ui-mock">
+                <div class="ui-mock-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><div class="ui-mock-title">Terminal</div></div>
                 <div class="ui-mock-body">
-                  <div class="ui-line-muted">$ curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash</div>
-                  <div class="ui-line-white" style="margin-top:6px;">香港市場行銷技能套件 安裝程式</div>
-                  <div class="ui-line-muted">─────────────────────────────────────</div>
-                  <div class="ui-line-white">▸ 建立技能目錄</div>
-                  <div class="ui-line-green">✓ 目錄: ~/.openclaw/skills</div>
-                  <div class="ui-line-white">▸ 安裝 product-marketing-context-hk</div>
-                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
-                  <div class="ui-line-green">✓ product-marketing-context-hk 安裝完成</div>
-                  <div class="ui-line-white">▸ 安裝 copywriting-hk</div>
-                  <div class="ui-line-green">✓ 下載 SKILL.md</div>
-                  <div class="ui-line-green">✓ 下載 copy-frameworks-hk.md</div>
-                  <div class="ui-line-green">✓ 下載 natural-transitions-hk.md</div>
-                  <div class="ui-line-green">✓ copywriting-hk 安裝完成</div>
-                  <div class="ui-line-muted" style="margin-top:6px;">─────────────────────────────────────</div>
-                  <div class="ui-line-green" style="font-weight:bold;">✓ 安裝完成！</div>
+                  <div class="ui-muted">$ curl -fsSL .../install.sh | bash</div>
+                  <div class="ui-white" style="margin-top:6px;">YAI 香港市場行銷技能套件 安裝程式</div>
+                  <div class="ui-muted">─────────────────────────────────────</div>
+                  <div class="ui-green">✓ product-marketing-context-hk 安裝完成</div>
+                  <div class="ui-green">✓ copywriting-hk 安裝完成</div>
+                  <div class="ui-green">✓ editing-content-hk 安裝完成</div>
+                  <div class="ui-green">✓ social-content-hk 安裝完成</div>
+                  <div class="ui-green">✓ strategy-content-hk 安裝完成</div>
+                  <div class="ui-green">✓ strategy-launch-hk 安裝完成</div>
+                  <div class="ui-muted">─────────────────────────────────────</div>
+                  <div class="ui-green" style="font-weight:700;">✓ 安裝完成！</div>
                 </div>
               </div>
             </div>
@@ -680,137 +255,53 @@ bash install.sh</span></pre>
 
           <div class="step">
             <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>只安裝指定技能（可選）</h4>
+              <pre><span class="comment"># 只安裝文案技能</span>
+<span class="ui-gold">... | bash -s -- --skill copywriting-hk</span>
+
+<span class="comment"># 只安裝社交媒體技能</span>
+<span class="ui-gold">... | bash -s -- --skill social-content-hk</span>
+
+<span class="comment"># 指定安裝目錄</span>
+<span class="ui-gold">... | bash -s -- --dir ~/my-skills</span></pre>
+              <p>可用技能名稱：<code>product-marketing-context-hk</code> <code>copywriting-hk</code> <code>editing-content-hk</code> <code>social-content-hk</code> <code>strategy-content-hk</code> <code>strategy-launch-hk</code></p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
             <div class="step-body">
               <h4>在 OpenClaw 確認安裝成功</h4>
-              <p>打開 OpenClaw，前往左側欄 <code>Skills</code>，確認兩個技能已列出並啟用：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — Skills</div>
-                </div>
+              <p>打開 OpenClaw → 左側欄 <code>Skills</code>，確認六個技能已列出：</p>
+              <div class="ui-mock">
+                <div class="ui-mock-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><div class="ui-mock-title">OpenClaw — Skills</div></div>
                 <div class="ui-mock-body">
-                  <div class="ui-line-muted">Installed Skills</div>
-                  <div class="ui-line-green" style="margin-top:6px;">✓ product-marketing-context-hk  v1.0.0</div>
-                  <div class="ui-line-green">✓ copywriting-hk  v1.0.0</div>
+                  <div class="ui-green">✓ product-marketing-context-hk  v1.0.0</div>
+                  <div class="ui-green">✓ strategy-content-hk            v1.0.0</div>
+                  <div class="ui-green">✓ strategy-launch-hk             v1.0.0</div>
+                  <div class="ui-green">✓ copywriting-hk                 v1.0.0</div>
+                  <div class="ui-green">✓ editing-content-hk             v1.0.0</div>
+                  <div class="ui-green">✓ social-content-hk              v1.1.0</div>
                 </div>
               </div>
-              <div class="note" style="margin-top:12px;">
-                如技能未顯示，嘗試重啟 OpenClaw 或手動刷新 Skills 頁面。
-              </div>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-body">
-              <h4>開啟新對話，開始使用</h4>
-              <p>在 OpenClaw 開啟新對話，直接輸入觸發語句：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — New Chat</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-prompt">你 →</div>
-                  <div class="ui-line-white" style="margin-left:24px;">幫我設定產品行銷背景資料</div>
-                  <div style="margin-top:8px;" class="ui-line-muted">── Claude ─────────────────────────────</div>
-                  <div class="ui-line-green" style="margin-top:4px;">Using skill: product-marketing-context-hk</div>
-                  <div class="ui-line-white" style="margin-top:4px;">好的，我先檢查一下是否已有背景資料……</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p style="font-size:13px;font-weight:700;margin:28px 0 12px;">其他安裝選項</p>
-
-        <p style="font-size:12px;color:var(--muted);margin-bottom:8px;">只安裝單一技能</p>
-        <pre><span class="comment"># 只安裝文案技能</span>
-<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill copywriting-hk</span>
-
-<span class="comment"># 只安裝背景資料技能</span>
-<span class="cmd">curl -fsSL https://raw.githubusercontent.com/yaiyouareai/YAI-Marketing/main/install.sh | bash -s -- --skill product-marketing-context-hk</span></pre>
-
-        <p style="font-size:12px;color:var(--muted);margin:16px 0 8px;">用 Git Clone</p>
-        <pre><span class="cmd">git clone https://github.com/yaiyouareai/YAI-Marketing.git
-cd YAI-Marketing
-bash install.sh</span></pre>
-
-      </div>
-    </div>
-
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-body">
-              <h4>開啟 OpenClaw，進入 Skills 管理頁面</h4>
-              <p>在左側導航欄點擊 <code>Skills</code>，再點擊右上角的 <code>+ Install Skill</code> 按鈕。</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — Skills</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-line-muted">┌─ Skills ──────────────────────────────┐</div>
-                  <div class="ui-line-white">│  Installed Skills              <span class="ui-line-green">[+ Install]</span> │</div>
-                  <div class="ui-line-muted">│  ─────────────────────────────────── │</div>
-                  <div class="ui-line-white">│  No skills installed yet              │</div>
-                  <div class="ui-line-muted">└───────────────────────────────────────┘</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-body">
-              <h4>選擇「From Folder」匯入</h4>
-              <p>在彈出的安裝對話框中，選擇 <code>From Folder</code> 選項，然後逐一選擇以下兩個資料夾：</p>
-              <ul>
-                <li>先選 <code>product-marketing-context-hk/</code></li>
-                <li>再選 <code>copywriting-hk/</code>（含 <code>references/</code> 子資料夾）</li>
-              </ul>
-              <div class="note" style="margin-top:12px;">
-                <strong>注意：</strong>安裝 <code>copywriting-hk</code> 時，確保 <code>references/</code> 子資料夾也在同一層，技能需要讀取其中的公式庫。
-              </div>
+              <div class="note" style="margin-top:12px;">如技能未顯示，嘗試重啟 OpenClaw 或手動刷新 Skills 頁面。</div>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num">4</div>
             <div class="step-body">
-              <h4>確認安裝成功</h4>
-              <p>安裝後，Skills 頁面應顯示兩個技能已啟用：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — Skills</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-line-muted">┌─ Installed Skills ────────────────────┐</div>
-                  <div class="ui-line-green">│  ✓ product-marketing-context-hk v1.0  │</div>
-                  <div class="ui-line-green">│  ✓ copywriting-hk v1.0               │</div>
-                  <div class="ui-line-muted">└───────────────────────────────────────┘</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">5</div>
-            <div class="step-body">
               <h4>開始使用</h4>
-              <p>在新對話中直接輸入觸發語句：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">OpenClaw — New Chat</div>
-                </div>
+              <p>在 OpenClaw 開啟新對話，輸入觸發語句：</p>
+              <div class="ui-mock">
+                <div class="ui-mock-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><div class="ui-mock-title">OpenClaw — New Chat</div></div>
                 <div class="ui-mock-body">
-                  <div class="ui-prompt">你 →</div>
-                  <div class="ui-line-white" style="margin-left:24px;">幫我設定產品行銷背景資料</div>
-                  <div style="margin-top:8px;" class="ui-line-muted">── Claude ─────────────────────────────</div>
-                  <div class="ui-line-green" style="margin-top:4px;">Using skill: product-marketing-context-hk</div>
-                  <div class="ui-line-white" style="margin-top:4px;">好的，我先檢查一下是否已有背景資料……</div>
+                  <div class="ui-gold">你 →</div>
+                  <div class="ui-white" style="margin-left:20px;">幫我設定產品行銷背景資料</div>
+                  <div class="ui-muted" style="margin-top:6px;">── Claude ─────────────────────────</div>
+                  <div class="ui-green" style="margin-top:4px;">Using skill: product-marketing-context-hk</div>
+                  <div class="ui-white" style="margin-top:4px;">好的，我先檢查是否已有背景資料……</div>
                 </div>
               </div>
             </div>
@@ -818,104 +309,87 @@ bash install.sh</span></pre>
         </div>
       </div>
 
-      <!-- CLAUDE.AI -->
+      <!-- CLAUDE.AI TAB -->
       <div class="install-pane" id="pane-claude">
-        <div class="note">
-          <strong>Claude.ai</strong> 透過 Projects 功能支援技能——將技能的 SKILL.md 內容加入 Project Instructions，或上傳檔案至 Project Knowledge。以下步驟針對 <strong>Claude.ai Pro / Team</strong> 用戶。
-        </div>
+        <div class="note"><strong>適用於：</strong>Claude.ai Pro / Team 用戶。透過 Project 功能手動使用技能。</div>
+        <div class="note warn"><strong>注意：</strong>必須在 Project 內對話——普通的 New Chat 無法讀取技能檔案。</div>
 
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
               <h4>建立新 Project</h4>
-              <p>在 Claude.ai 左側欄點擊 <code>Projects</code>，然後點擊 <code>+ New Project</code>，命名為「香港市場行銷」或任何你喜歡的名稱。</p>
+              <p>在 Claude.ai 左側欄點擊 <code>Projects</code> → <code>+ New Project</code>，命名為「YAI 香港行銷技能」。</p>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h4>上傳技能檔案至 Project Knowledge</h4>
-              <p>在 Project 設定頁面，找到 <code>Project Knowledge</code> 區域，點擊 <code>Add content</code>，逐一上傳以下檔案：</p>
+              <h4>上傳 SKILL.md 檔案至 Project Knowledge</h4>
+              <p>在 Project 設定找到 <strong>Project Knowledge</strong> → <strong>Add content</strong>，上傳以下核心檔案：</p>
               <ul>
                 <li><code>product-marketing-context-hk/SKILL.md</code></li>
+                <li><code>strategy-content-hk/SKILL.md</code></li>
+                <li><code>strategy-launch-hk/SKILL.md</code></li>
                 <li><code>copywriting-hk/SKILL.md</code></li>
-                <li><code>copywriting-hk/references/copy-frameworks-hk.md</code></li>
-                <li><code>copywriting-hk/references/natural-transitions-hk.md</code></li>
+                <li><code>editing-content-hk/SKILL.md</code></li>
+                <li><code>social-content-hk/SKILL.md</code></li>
               </ul>
-              <div class="note" style="margin-top:12px;">
-                <strong>建議：</strong>上傳時保留原始檔名，方便日後識別和更新。
-              </div>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h4>設定 Project Instructions</h4>
-              <p>在 Project 設定中找到 <code>Custom Instructions</code> 或 <code>Project Instructions</code>，加入以下說明：</p>
-              <pre><span class="comment"># 技能指引</span>
-
-<span class="cmd">你有兩個香港市場行銷技能，已上傳至 Project Knowledge：
-
-1. product-marketing-context-hk（SKILL.md）
-   - 建立和管理產品行銷背景資料
-   - 儲存於 .agents/product-marketing-context.md
-
-2. copywriting-hk（SKILL.md）
-   - 撰寫香港市場推廣文案
-   - 需要時參考 copy-frameworks-hk.md 和
-     natural-transitions-hk.md
-
-處理行銷相關任務時，先讀取對應的 SKILL.md
-並按照其中的指引執行。</span></pre>
+              <h4>上傳 Reference Files（建議）</h4>
+              <p>一併上傳以下參考檔案，讓技能回應更完整：</p>
+              <ul>
+                <li><code>copywriting-hk/references/copy-frameworks-hk.md</code></li>
+                <li><code>copywriting-hk/references/natural-transitions-hk.md</code></li>
+                <li><code>editing-content-hk/references/plain-english-alternatives-hk.md</code></li>
+                <li><code>social-content-hk/references/platforms-hk.md</code></li>
+                <li><code>social-content-hk/references/post-templates-hk.md</code></li>
+                <li><code>social-content-hk/references/reverse-engineering-hk.md</code></li>
+                <li><code>strategy-content-hk/references/headless-cms-hk.md</code></li>
+              </ul>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num">4</div>
             <div class="step-body">
-              <h4>（可選）預載產品背景資料</h4>
-              <p>如果你已有產品背景資料，可以將 <code>.agents/product-marketing-context.md</code> 也上傳至 Project Knowledge。這樣每次對話都能自動引用，唔需要重新輸入。</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">Claude.ai — Project Knowledge</div>
-                </div>
-                <div class="ui-mock-body">
-                  <div class="ui-line-muted">Project Knowledge</div>
-                  <div class="ui-line-green" style="margin-top:6px;">✓ SKILL.md (product-marketing-context-hk)</div>
-                  <div class="ui-line-green">✓ SKILL.md (copywriting-hk)</div>
-                  <div class="ui-line-green">✓ copy-frameworks-hk.md</div>
-                  <div class="ui-line-green">✓ natural-transitions-hk.md</div>
-                  <div class="ui-line-gold">✓ product-marketing-context.md  <span class="ui-line-muted">← 可選</span></div>
-                </div>
-              </div>
+              <h4>設定 Project Instructions</h4>
+              <p>在 Project 設定找到 <strong>Custom Instructions</strong>，加入以下說明：</p>
+              <pre><span class="ui-white">你有六個香港市場行銷技能，已上傳至 Project Knowledge：
+
+1. product-marketing-context-hk — 建立和管理產品行銷背景資料
+2. strategy-content-hk — 規劃內容策略和話題群組
+3. strategy-launch-hk — 規劃產品發布策略
+4. copywriting-hk — 撰寫香港市場推廣文案
+5. editing-content-hk — 編輯和改善現有文案
+6. social-content-hk — 建立社交媒體內容計劃
+
+處理行銷任務時，先讀取對應的 SKILL.md 並按照其中的
+指引執行。背景資料儲存於 .agents/product-marketing-context.md。</span></pre>
             </div>
           </div>
 
           <div class="step">
             <div class="step-num">5</div>
             <div class="step-body">
-              <h4>在 Project 內開始對話</h4>
-              <p>確保在你建立的 Project 內開啟新對話（唔係普通的 New Chat），然後直接輸入觸發語句：</p>
-              <div class="ui-mock" style="margin-top:12px;">
-                <div class="ui-mock-bar">
-                  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-                  <div class="ui-mock-title">Claude.ai — 香港市場行銷 Project</div>
-                </div>
+              <h4>在 Project 內開啟對話</h4>
+              <p>確保在你建立的 Project 內開啟新對話，然後輸入觸發語句：</p>
+              <div class="ui-mock">
+                <div class="ui-mock-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><div class="ui-mock-title">Claude.ai — YAI 香港行銷技能 Project</div></div>
                 <div class="ui-mock-body">
-                  <div class="ui-prompt">你 →</div>
-                  <div class="ui-line-white" style="margin-left:24px;">幫我寫主頁文案，我係做 HR 軟件的</div>
-                  <div style="margin-top:8px;" class="ui-line-muted">── Claude ─────────────────────────────</div>
-                  <div class="ui-line-white" style="margin-top:4px;">我先查看一下你的產品行銷背景資料……</div>
-                  <div class="ui-line-green" style="margin-top:4px;">[讀取 copywriting-hk SKILL.md]</div>
-                  <div class="ui-line-white" style="margin-top:4px;">找到了。根據你的產品背景，以下是主頁文案建議……</div>
+                  <div class="ui-gold">你 →</div>
+                  <div class="ui-white" style="margin-left:20px;">幫我寫主頁文案，我係做 HR 軟件的</div>
+                  <div class="ui-muted" style="margin-top:6px;">── Claude ──────────────────────────</div>
+                  <div class="ui-white" style="margin-top:4px;">我先查看你的產品行銷背景資料……</div>
+                  <div class="ui-green" style="margin-top:2px;">[讀取 copywriting-hk SKILL.md]</div>
+                  <div class="ui-white" style="margin-top:2px;">根據你的產品背景，以下是主頁文案：</div>
                 </div>
-              </div>
-              <div class="note" style="margin-top:12px;">
-                <strong>重要：</strong>必須在 Project 內對話，普通的 New Chat 無法讀取 Project Knowledge 和 Instructions。
               </div>
             </div>
           </div>
@@ -926,52 +400,27 @@ bash install.sh</span></pre>
 
   <!-- USAGE -->
   <div class="section">
-    <div class="section-label">使用方法</div>
+    <div class="section-label">開始使用</div>
     <div class="section-title">常用觸發語句</div>
+    <ul class="skill-list">
+      <li><span class="sname">product-marketing-context-hk</span><span class="sdesc">「幫我設定產品行銷背景資料」／「幫我整理我們的品牌定位」／「ICP 怎樣定義？」</span></li>
+      <li><span class="sname">strategy-content-hk</span><span class="sdesc">「幫我規劃內容策略」／「我應該寫什麼話題」／「幫我建立話題群組」</span></li>
+      <li><span class="sname">strategy-launch-hk</span><span class="sdesc">「我們快要推出新產品，幫我規劃發布計劃」／「怎樣聯絡香港 KOL」／「如何讓媒體報道我們」</span></li>
+      <li><span class="sname">copywriting-hk</span><span class="sdesc">「幫我寫主頁文案」／「改一改呢個標題」／「呢個 CTA 點改好？」</span></li>
+      <li><span class="sname">editing-content-hk</span><span class="sdesc">「幫我改一改呢段文案」／「呢段讀落好企業官腔」／「幫我潤色」</span></li>
+      <li><span class="sname">social-content-hk</span><span class="sdesc">「幫我規劃 LinkedIn 內容策略」／「小紅書怎樣起步」／「幫我寫發布當天的社交媒體帖」</span></li>
+    </ul>
 
-    <div class="detail-grid">
-      <div class="detail-card">
-        <h4><span class="icon">📋</span> 建立背景資料</h4>
-        <ul>
-          <li>「幫我設定產品行銷背景資料」</li>
-          <li>「我想建立行銷背景文件」</li>
-          <li>「幫我整理我們的品牌定位」</li>
-          <li>「ICP 怎樣定義？」</li>
-          <li>「我的目標受眾係誰，幫我整理一下」</li>
-        </ul>
-      </div>
-      <div class="detail-card">
-        <h4><span class="icon">✍️</span> 撰寫文案</h4>
-        <ul>
-          <li>「幫我寫主頁文案」</li>
-          <li>「改一改呢個標題」</li>
-          <li>「呢個 CTA 點改好？」</li>
-          <li>「我個 hero section 太悶，幫我重寫」</li>
-          <li>「呢段文案有咩問題？」</li>
-        </ul>
-      </div>
-    </div>
-
-    <div style="margin-top:24px;">
+    <div style="margin-top:28px;">
       <table>
-        <thead>
-          <tr>
-            <th>技能</th>
-            <th>版本</th>
-            <th>測試案例</th>
-          </tr>
-        </thead>
+        <thead><tr><th>技能</th><th>版本</th><th>Reference Files</th><th>測試案例</th></tr></thead>
         <tbody>
-          <tr>
-            <td>product-marketing-context-hk<div class="desc">建立和管理產品行銷背景資料</div></td>
-            <td>1.0.0</td>
-            <td>7 個</td>
-          </tr>
-          <tr>
-            <td>copywriting-hk<div class="desc">香港市場推廣文案，附 2 個參考文件</div></td>
-            <td>1.0.0</td>
-            <td>7 個</td>
-          </tr>
+          <tr><td>product-marketing-context-hk<div class="sub">產品定位、受眾、競爭格局</div></td><td>1.0.0</td><td>—</td><td>7</td></tr>
+          <tr><td>strategy-content-hk<div class="sub">內容策略、話題群組、關鍵詞</div></td><td>1.0.0</td><td>headless-cms-hk.md</td><td>7</td></tr>
+          <tr><td>strategy-launch-hk<div class="sub">發布策略、KOL、媒體</div></td><td>1.0.0</td><td>—</td><td>7</td></tr>
+          <tr><td>copywriting-hk<div class="sub">文案撰寫</div></td><td>1.0.0</td><td>copy-frameworks-hk.md<br>natural-transitions-hk.md</td><td>7</td></tr>
+          <tr><td>editing-content-hk<div class="sub">文案編輯、七步框架</div></td><td>1.0.0</td><td>plain-english-alternatives-hk.md</td><td>7</td></tr>
+          <tr><td>social-content-hk<div class="sub">社交媒體、Hook 公式、發布內容</div></td><td>1.1.0</td><td>platforms-hk.md<br>post-templates-hk.md<br>reverse-engineering-hk.md</td><td>9</td></tr>
         </tbody>
       </table>
     </div>
@@ -980,9 +429,16 @@ bash install.sh</span></pre>
 </div>
 
 <footer>
-  香港市場行銷技能套件 · 基於 <span>copywriting v1.1.0</span> 及 <span>product-marketing-context v1.1.0</span> 本地化
+  YAI 香港市場行銷技能套件 · <span>github.com/yaiyouareai/YAI-Marketing</span>
 </footer>
 
-<script></script>
+<script>
+function switchTab(id, el) {
+  document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.install-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('pane-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
 </body>
 </html>
